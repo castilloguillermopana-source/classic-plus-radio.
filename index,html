@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Plus Radio | Archivo On-Demand</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #1a1a1a; color: #fff; margin: 0; padding: 20px; }
+        header { text-align: center; padding: 40px 0; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: auto; }
+        .card { background: #333; padding: 20px; border-radius: 8px; text-align: center; }
+        .card h3 { margin-top: 0; }
+        .btn-play { background-color: #e50914; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
 
+<header>
+    <h1>Classic Plus Radio</h1>
+    <p>Archivo de Sesiones - On Demand</p>
+</header>
+
+<main class="grid-container">
+    <div class="card">
+        <h3>Sesión 01</h3>
+        <p>Fecha: 05/07/2026</p>
+        <button class="btn-play">Reproducir</button>
+    </div>
+</main>
+
+</body>
+</html>
