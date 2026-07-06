@@ -2,40 +2,21 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classic Plus Radio</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #050505; color: #fff; margin: 0; padding-bottom: 80px; }
-        header { text-align: center; padding: 20px; background: rgba(5, 5, 5, 0.9); position: sticky; top: 0; border-bottom: 1px solid #222; z-index: 100; }
-        .grid-container { padding: 20px; display: grid; gap: 20px; }
-        .card { background: #121212; padding: 20px; border-radius: 16px; border: 1px solid #222; }
-        button { background: #e50914; border: none; color: white; padding: 12px; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer; transition: background 0.3s; }
-        button:active { transform: scale(0.98); }
-        nav { position: fixed; bottom: 0; width: 100%; background: #121212; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid #333; }
-        .nav-item { color: #888; font-size: 12px; text-transform: uppercase; }
-        .active { color: #e50914; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #050505; color: #fff; margin: 0; }
+        .card { background: #121212; padding: 20px; border-radius: 16px; border: 1px solid #222; text-align: center; margin: 20px; }
+        button { background: #e50914; border: none; color: white; padding: 15px; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1 style="font-size: 18px; margin: 0; letter-spacing: 2px;">CLASSIC PLUS RADIO</h1>
-    </header>
-
-    <main class="grid-container">
-        <div class="card">
-            <h3>Sesión 01</h3>
-            <p style="color:#888;">Transmisión en vivo: Éxitos de los 70s</p>
-            <audio id="radioStream" src="TU_URL_DE_STREAM_AQUI"></audio>
-            <button id="btnPlay" onclick="toggleRadio()">REPRODUCE</button>
-        </div>
-    </main>
-
-    <nav>
-        <div class="nav-item active">Inicio</div>
-        <div class="nav-item">Archivo</div>
-        <div class="nav-item">Favoritos</div>
-    </nav>
+    <div class="card">
+        <h3>Sesión 01</h3>
+        <p style="color:#888;">Modo Prueba: Escucha un tono</p>
+        <audio id="radioStream" src="https://www.w3schools.com/html/horse.mp3"></audio>
+        <button id="btnPlay" onclick="toggleRadio()">REPRODUCE</button>
+    </div>
 
     <script>
         function toggleRadio() {
