@@ -2,41 +2,36 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Plus Radio</title>
     <style>
-        body { margin: 0; background-color: #0A0A0A; color: #FFFFFF; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #050505; color: #fff; margin: 0; }
         
-        /* Barra de Navegación Premium */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 5%; border-bottom: 1px solid #333; }
-        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
-        nav ul { display: flex; list-style: none; gap: 30px; }
-        nav ul li { cursor: pointer; color: #888; transition: 0.3s; }
-        nav ul li:hover { color: #FFFFFF; }
+        /* Navegación */
+        nav { display: flex; justify-content: center; gap: 30px; padding: 30px; border-bottom: 1px solid #222; }
+        .nav-item { color: #888; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .nav-item:hover { color: #fff; }
 
-        /* Área de Contenido */
-        main { display: flex; justify-content: center; align-items: center; height: 70vh; text-align: center; }
-        .module-box { border: 1px solid #333; padding: 40px; border-radius: 15px; width: 60%; }
-        
-        h2 { font-size: 2rem; margin-bottom: 20px; }
+        /* Contenedor de Módulos */
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; text-align: center; }
+        .module { background: #121212; padding: 40px; border-radius: 16px; border: 1px solid #222; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">CLASSIC+ RADIO</div>
-        <ul>
-            <li>LIVE</li>
-            <li>ARCHIVE</li>
-            <li>VIDEO</li>
-            <li>ADVERTISING</li>
-        </ul>
+        <div class="nav-item">LIVE</div>
+        <div class="nav-item">ARCHIVE</div>
+        <div class="nav-item">VIDEO</div>
+        <div class="nav-item">ADVERTISING</div>
     </nav>
 
-    <main>
-        <div class="module-box">
-            <h2>Bienvenido a Classic+</h2>
-            <p>Selecciona un módulo para comenzar la experiencia.</p>
+    <div class="container">
+        <div class="module">
+            <h2>Bienvenido a Classic Plus Radio</h2>
+            <p style="color:#888;">Selecciona una sección en el menú superior para continuar.</p>
         </div>
-    </main>
+    </div>
 
 </body>
 </html>
