@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic Plus Radio</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #050505; color: #fff; margin: 0; }
+        body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; margin: 0; }
         
-        /* Navegación */
-        nav { display: flex; justify-content: center; gap: 30px; padding: 30px; border-bottom: 1px solid #222; }
-        .nav-item { color: #888; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        .nav-item:hover { color: #fff; }
-
-        /* Contenedor de Módulos */
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; text-align: center; }
-        .module { background: #121212; padding: 40px; border-radius: 16px; border: 1px solid #222; }
+        /* Sidebar de App (Panel lateral fijo) */
+        aside { width: 200px; border-right: 1px solid #333; padding: 40px 20px; display: flex; flex-direction: column; gap: 30px; }
+        .menu-item { cursor: pointer; color: #777; font-weight: bold; transition: 0.3s; }
+        .menu-item:hover { color: #fff; }
+        
+        /* Contenedor de la APP (Pantalla principal) */
+        #app-viewport { flex-grow: 1; display: flex; justify-content: center; align-items: center; padding: 40px; }
+        .screen { border: 1px solid #333; padding: 50px; border-radius: 20px; width: 100%; max-width: 600px; text-align: center; background: #0a0a0a; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-item">LIVE</div>
-        <div class="nav-item">ARCHIVE</div>
-        <div class="nav-item">VIDEO</div>
-        <div class="nav-item">ADVERTISING</div>
-    </nav>
+    <aside>
+        <div style="font-weight: 900; margin-bottom: 20px;">CLASSIC+</div>
+        <div class="menu-item" onclick="loadScreen('LIVE')">LIVE</div>
+        <div class="menu-item" onclick="loadScreen('ARCHIVE')">ARCHIVE</div>
+        <div class="menu-item" onclick="loadScreen('VIDEO')">VIDEO</div>
+        <div class="menu-item" onclick="loadScreen('ADVERTISING')">ADVERTISING</div>
+    </aside>
 
-    <div class="container">
-        <div class="module">
-            <h2>Bienvenido a Classic Plus Radio</h2>
-            <p style="color:#888;">Selecciona una sección en el menú superior para continuar.</p>
+    <main id="app-viewport">
+        <div class="screen" id="current-screen">
+            <h2>Bienvenido</h2>
+            <p>Panel de Control Iniciado</p>
         </div>
-    </div>
+    </main>
 
+    <script>
+        function loadScreen(name) {
+            document.getElementById('current-screen').innerHTML = `<h2>${name}</h2><p>Contenido del módulo ${name} en desarrollo...</p>`;
+        }
+    </script>
 </body>
 </html>
