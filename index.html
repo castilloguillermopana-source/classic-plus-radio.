@@ -2,71 +2,60 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic Plus Radio | Archivo On-Demand</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Classic Plus Radio</title>
     <style>
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
             background-color: #050505; 
-            color: #ffffff; 
+            color: #fff; 
             margin: 0; 
-            padding: 40px 20px; 
+            padding-bottom: 80px; /* Espacio para el nav fijo */
         }
-        header { text-align: center; padding: 60px 0; }
-        h1 { font-weight: 200; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 10px; }
-        
-        .grid-container { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-            gap: 30px; 
-            max-width: 1100px; 
-            margin: auto; 
+        header { 
+            text-align: center; 
+            padding: 20px; 
+            background: rgba(5, 5, 5, 0.9);
+            position: sticky; top: 0; 
+            border-bottom: 1px solid #222;
+            z-index: 100;
         }
-        
+        .grid-container { padding: 20px; display: grid; gap: 20px; }
         .card { 
             background: #121212; 
-            padding: 30px; 
-            border-radius: 12px; 
-            text-align: center; 
+            padding: 20px; 
+            border-radius: 16px; 
             border: 1px solid #222;
-            transition: all 0.3s ease;
         }
-        
-        .card:hover { 
-            border-color: #e50914; 
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(229, 9, 20, 0.2);
+        /* Barra de navegación estilo APP */
+        nav {
+            position: fixed; bottom: 0; width: 100%;
+            background: #121212; display: flex; justify-content: space-around;
+            padding: 15px 0; border-top: 1px solid #333;
         }
-        
-        .btn-play { 
-            background-color: transparent; 
-            color: #fff; 
-            border: 1px solid #e50914; 
-            padding: 10px 25px; 
-            border-radius: 4px; 
-            cursor: pointer; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-        
-        .btn-play:hover { background-color: #e50914; }
+        .nav-item { color: #888; font-size: 12px; text-transform: uppercase; }
+        .active { color: #e50914; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Classic Plus Radio</h1>
-    <p>Archivo de Sesiones · On-Demand</p>
+    <h1 style="font-size: 18px; margin: 0; letter-spacing: 2px;">CLASSIC PLUS RADIO</h1>
 </header>
 
 <main class="grid-container">
     <div class="card">
         <h3>Sesión 01</h3>
-        <p>Recordando los éxitos de los 70s</p>
-        <button class="btn-play">Reproducir</button>
+        <p style="color:#888;">Recordando los éxitos de los 70s</p>
+        <button style="background:#e50914; border:none; color:white; padding:10px 20px; border-radius:8px; width:100%;">Reproducir</button>
     </div>
 </main>
+
+<nav>
+    <div class="nav-item active">Inicio</div>
+    <div class="nav-item">Archivo</div>
+    <div class="nav-item">Favoritos</div>
+</nav>
 
 </body>
 </html>
