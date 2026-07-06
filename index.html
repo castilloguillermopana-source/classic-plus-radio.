@@ -2,37 +2,41 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic Plus Radio</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #050505; color: #fff; margin: 0; }
-        .card { background: #121212; padding: 20px; border-radius: 16px; border: 1px solid #222; text-align: center; margin: 20px; }
-        button { background: #e50914; border: none; color: white; padding: 15px; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer; }
+        body { margin: 0; background-color: #0A0A0A; color: #FFFFFF; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        
+        /* Barra de Navegación Premium */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 5%; border-bottom: 1px solid #333; }
+        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul li { cursor: pointer; color: #888; transition: 0.3s; }
+        nav ul li:hover { color: #FFFFFF; }
+
+        /* Área de Contenido */
+        main { display: flex; justify-content: center; align-items: center; height: 70vh; text-align: center; }
+        .module-box { border: 1px solid #333; padding: 40px; border-radius: 15px; width: 60%; }
+        
+        h2 { font-size: 2rem; margin-bottom: 20px; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h3>Sesión 01</h3>
-        <p style="color:#888;">Modo Prueba: Escucha un tono</p>
-        <audio id="radioStream" src="https://www.w3schools.com/html/horse.mp3"></audio>
-        <button id="btnPlay" onclick="toggleRadio()">REPRODUCE</button>
-    </div>
 
-    <script>
-        function toggleRadio() {
-            const audio = document.getElementById('radioStream');
-            const btn = document.getElementById('btnPlay');
-            
-            if (audio.paused) {
-                audio.play();
-                btn.textContent = "EN VIVO [PAUSA]";
-                btn.style.background = "#333";
-            } else {
-                audio.pause();
-                btn.textContent = "REPRODUCE";
-                btn.style.background = "#e50914";
-            }
-        }
-    </script>
+    <nav>
+        <div class="logo">CLASSIC+ RADIO</div>
+        <ul>
+            <li>LIVE</li>
+            <li>ARCHIVE</li>
+            <li>VIDEO</li>
+            <li>ADVERTISING</li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="module-box">
+            <h2>Bienvenido a Classic+</h2>
+            <p>Selecciona un módulo para comenzar la experiencia.</p>
+        </div>
+    </main>
+
 </body>
 </html>
