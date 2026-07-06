@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
     <style>
-        body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; margin: 0; }
+        body { margin: 0; background: #050505; color: #fff; font-family: 'Inter', sans-serif; display: flex; height: 100vh; overflow: hidden; }
         
-        /* Sidebar de App (Panel lateral fijo) */
-        aside { width: 200px; border-right: 1px solid #333; padding: 40px 20px; display: flex; flex-direction: column; gap: 30px; }
-        .menu-item { cursor: pointer; color: #777; font-weight: bold; transition: 0.3s; }
-        .menu-item:hover { color: #fff; }
-        
-        /* Contenedor de la APP (Pantalla principal) */
-        #app-viewport { flex-grow: 1; display: flex; justify-content: center; align-items: center; padding: 40px; }
-        .screen { border: 1px solid #333; padding: 50px; border-radius: 20px; width: 100%; max-width: 600px; text-align: center; background: #0a0a0a; }
+        /* Sidebar (Panel de App) */
+        nav { width: 220px; background: #0a0a0a; border-right: 1px solid #222; padding: 40px 20px; display: flex; flex-direction: column; gap: 20px; }
+        .logo { font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 40px; color: #D4AF37; }
+        .menu-item { cursor: pointer; color: #888; font-weight: 500; padding: 10px; transition: 0.3s; border-radius: 8px; }
+        .menu-item:hover { color: #fff; background: #1a1a1a; }
+
+        /* Contenido Central (Viewport) */
+        main { flex: 1; padding: 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .app-view { width: 100%; max-width: 700px; }
+        h1 { font-size: 3rem; margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
-    <aside>
-        <div style="font-weight: 900; margin-bottom: 20px;">CLASSIC+</div>
-        <div class="menu-item" onclick="loadScreen('LIVE')">LIVE</div>
-        <div class="menu-item" onclick="loadScreen('ARCHIVE')">ARCHIVE</div>
-        <div class="menu-item" onclick="loadScreen('VIDEO')">VIDEO</div>
-        <div class="menu-item" onclick="loadScreen('ADVERTISING')">ADVERTISING</div>
-    </aside>
+    <nav>
+        <div class="logo">CLASSIC+</div>
+        <div class="menu-item" onclick="show('LIVE')">LIVE</div>
+        <div class="menu-item" onclick="show('ARCHIVE')">ARCHIVE</div>
+        <div class="menu-item" onclick="show('VIDEO')">VIDEO</div>
+        <div class="menu-item" onclick="show('ADVERTISING')">ADVERTISING</div>
+    </nav>
 
-    <main id="app-viewport">
-        <div class="screen" id="current-screen">
-            <h2>Bienvenido</h2>
-            <p>Panel de Control Iniciado</p>
+    <main id="app">
+        <div class="app-view">
+            <h1 id="title">Classic+ Radio</h1>
+            <p id="desc">Selecciona un módulo para iniciar la experiencia premium.</p>
         </div>
     </main>
 
     <script>
-        function loadScreen(name) {
-            document.getElementById('current-screen').innerHTML = `<h2>${name}</h2><p>Contenido del módulo ${name} en desarrollo...</p>`;
+        function show(module) {
+            const title = document.getElementById('title');
+            const desc = document.getElementById('desc');
+            title.innerText = module;
+            desc.innerText = `Accediendo al módulo de ${module}...`;
+            // Aquí es donde después inyectaremos los reproductores reales
         }
     </script>
 </body>
